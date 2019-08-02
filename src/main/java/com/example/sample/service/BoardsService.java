@@ -6,4 +6,5 @@ import com.example.sample.boards.BoardDto;
 
 public interface BoardsService {
   List<BoardDto> listBoards() throws Exception;
+  void createBoard(BoardDto board) throws Exception;
 }

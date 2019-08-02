@@ -9,4 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface BoardMapper {
   List<BoardDto> listBoards() throws Exception;
+  void createBoard(BoardDto board) throws Exception;
 }

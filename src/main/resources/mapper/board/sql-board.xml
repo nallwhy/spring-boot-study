@@ -8,7 +8,14 @@
       SELECT id, title, hit_count, created_at
         FROM boards
         WHERE NOT deleted
-        ORDER BY id DESC
+        ORDER BY id DESC;
       ]]>
   </select>
+
+  <insert id="createBoard" parameterType="com.example.sample.boards.BoardDto">
+    <![CDATA[
+      INSERT INTO boards (title, content, created_at, created_by, updated_by)
+        VALUES (#{title}, #{content}, NOW(), 'admin', 'admin');
+      ]]>
+  </insert>
 </mapper>
