@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface BoardMapper {
-  List<BoardDto> listBoards() throws Exception;
-  void createBoard(BoardDto board) throws Exception;
+  List<BoardDto> list() throws Exception;
+  void create(BoardDto board) throws Exception;
 }

@@ -3,7 +3,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.sample.boards.mapper.BoardMapper">
-  <select id="listBoards" resultType="com.example.sample.boards.BoardDto">
+  <select id="list" resultType="com.example.sample.boards.BoardDto">
     <![CDATA[
       SELECT id, title, hit_count, created_at
         FROM boards
@@ -12,7 +12,7 @@
       ]]>
   </select>
 
-  <insert id="createBoard" parameterType="com.example.sample.boards.BoardDto">
+  <insert id="create" parameterType="com.example.sample.boards.BoardDto">
     <![CDATA[
       INSERT INTO boards (title, content, created_at, created_by, updated_by)
         VALUES (#{title}, #{content}, NOW(), 'admin', 'admin');

@@ -15,11 +15,11 @@ public class BoardsServiceImpl implements BoardsService {
 
   @Override
   public List<BoardDto> listBoards() throws Exception {
-    return boardMapper.listBoards();
+    return boardMapper.list();
   }
 
   @Override
   public void createBoard(BoardDto board) throws Exception {
-    boardMapper.createBoard(board);
-  } 
+    boardMapper.create(board);
+  }
 }
