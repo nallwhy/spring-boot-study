@@ -20,7 +20,7 @@ public class BoardController {
 
   @RequestMapping(value = "", method = RequestMethod.GET)
   public ModelAndView index() throws Exception {
-    ModelAndView mv = new ModelAndView("/boards/index");
+    ModelAndView mv = new ModelAndView("boards/index");
 
     List<BoardDto> list = boardsService.listBoards();
     mv.addObject("list", list);
@@ -30,7 +30,7 @@ public class BoardController {
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public ModelAndView show(@PathVariable("id") long id) throws Exception {
-    ModelAndView mv = new ModelAndView("/boards/show");
+    ModelAndView mv = new ModelAndView("boards/show");
 
     BoardDto board = boardsService.getBoard(id);
     mv.addObject("board", board);
@@ -40,7 +40,7 @@ public class BoardController {
 
   @RequestMapping(value = "/new", method = RequestMethod.GET)
   public String new_page() throws Exception {
-    return "/boards/new";
+    return "boards/new";
   }
 
   @RequestMapping(value = "", method = RequestMethod.POST)
