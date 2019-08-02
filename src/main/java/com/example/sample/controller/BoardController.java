@@ -7,6 +7,7 @@ import com.example.sample.service.BoardsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,6 +24,16 @@ public class BoardController {
 
     List<BoardDto> list = boardsService.listBoards();
     mv.addObject("list", list);
+
+    return mv;
+  }
+
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public ModelAndView show(@PathVariable("id") long id) throws Exception {
+    ModelAndView mv = new ModelAndView("/boards/show");
+
+    BoardDto board = boardsService.getBoard(id);
+    mv.addObject("board", board);
 
     return mv;
   }

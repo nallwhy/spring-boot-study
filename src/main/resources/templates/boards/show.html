@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>board</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"></link>
+</head>
+<body>
+  <div class="container">
+    <h2>게시판 상세</h2>
+    <p th:text="${'글번호: ' + board.id}"></p>
+    <p th:text="${'조회수: ' + board.hitCount}"></p>
+    <p th:text="${'작성자: ' + board.createdBy}"></p>
+    <p th:text="${'작성일: ' + board.createdAt}"></p>
+    <p th:text="${'제목: ' + board.title}"></p>
+    <p th:text="${'내용: ' + board.content}"></p>
+  </div>
+</body>
+</html>

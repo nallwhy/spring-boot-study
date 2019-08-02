@@ -5,11 +5,19 @@
 <mapper namespace="com.example.sample.boards.mapper.BoardMapper">
   <select id="list" resultType="com.example.sample.boards.BoardDto">
     <![CDATA[
-      SELECT id, title, hit_count, created_at
+      SELECT *
         FROM boards
         WHERE NOT deleted
         ORDER BY id DESC;
       ]]>
+  </select>
+
+  <select id="get" parameterType="long" resultType="com.example.sample.boards.BoardDto">
+    <![CDATA[
+      SELECT *
+        FROM boards
+        WHERE id = #{id} AND NOT deleted;
+    ]]>
   </select>
 
   <insert id="create" parameterType="com.example.sample.boards.BoardDto">
@@ -18,4 +26,10 @@
         VALUES (#{title}, #{content}, NOW(), 'admin', 'admin');
       ]]>
   </insert>
+
+  <update id="updateHitCount" parameterType="long">
+    <![CDATA[
+      UPDATE boards SET hit_count = hit_count + 1 WHERE id = #{id};
+    ]]>
+  </update>
 </mapper>

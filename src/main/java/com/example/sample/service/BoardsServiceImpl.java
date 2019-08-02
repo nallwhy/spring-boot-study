@@ -19,6 +19,13 @@ public class BoardsServiceImpl implements BoardsService {
   }
 
   @Override
+  public BoardDto getBoard(long id) throws Exception {
+    boardMapper.updateHitCount(id);
+
+    return boardMapper.get(id);
+  }
+
+  @Override
   public void createBoard(BoardDto board) throws Exception {
     boardMapper.create(board);
   }
