@@ -13,13 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class BoardController {
   @Autowired
-  private BoardsService BoardsService;
+  private BoardsService boardsService;
 
   @RequestMapping("/boards")
   public ModelAndView index() throws Exception {
     ModelAndView mv = new ModelAndView("/boards/index");
 
-    List<BoardDto> list = BoardsService.listBoards();
+    List<BoardDto> list = boardsService.listBoards();
     mv.addObject("list", list);
 
     return mv;
