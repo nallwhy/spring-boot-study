@@ -7,11 +7,11 @@
 
 ## TODO
 
-- flyway -> liquibase. deploy + DB version control. DB rollback 가능
-- kotlin
-- test
-- Spring 에서의 view layer 전략
-- Spring 에서의 param 전략 (PUT + POJO 는 끔찍한 조합)
-- requery
-- webflux
-- cqrs + es
+- [ ] flyway -> liquibase. deploy + DB version control. DB rollback 가능
+- [ ] kotlin
+- [ ] test
+- [ ] Spring 에서의 view layer 전략
+- [ ] Spring 에서의 param 전략 (PUT + POJO 는 끔찍한 조합)
+- [ ] requery
+- [ ] webflux
+- [ ] cqrs + es
