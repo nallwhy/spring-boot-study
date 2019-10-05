@@ -10,8 +10,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BoardsServiceImpl implements BoardsService {
-  @Autowired
+
   private BoardMapper boardMapper;
+
+  public BoardsServiceImpl(@Autowired BoardMapper boardMapper) {
+    this.boardMapper = boardMapper;
+  }
 
   @Override
   public List<BoardDto> listBoards() throws Exception {

@@ -19,8 +19,11 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:/application.yml")
 public class DatabaseConfiguration {
 
-  @Autowired
   private ApplicationContext applicationContext;
+
+  public DatabaseConfiguration(@Autowired ApplicationContext applicationContext) {
+    this.applicationContext = applicationContext;
+  }
 
   @Bean
   @ConfigurationProperties(prefix = "spring.datasource.hikari")
@@ -29,9 +32,8 @@ public class DatabaseConfiguration {
   }
 
   @Bean
-  public DataSource dataSource() throws Exception {
-    DataSource dataSource = new HikariDataSource(hikariConfig());
-    return dataSource;
+  public DataSource dataSource() {
+    return new HikariDataSource(hikariConfig());
   }
 
   @Bean
