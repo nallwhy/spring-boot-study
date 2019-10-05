@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <!-- Appenders -->
+    <appender name="console-debug" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%d %5p [%c] %m%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="console-info" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%d %5p %m%n</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- Loggers -->
+    <logger name="board" level="DEBUG" apeender-ref="console-debug"/>
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="console-debug"/>
+    </root>
+</configuration>

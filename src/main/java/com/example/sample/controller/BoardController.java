@@ -5,14 +5,17 @@ import java.util.List;
 import com.example.sample.boards.BoardDto;
 import com.example.sample.service.BoardsService;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@Slf4j
 @RequestMapping("/boards")
 public class BoardController {
+
   private BoardsService boardsService;
 
   public BoardController(@Autowired BoardsService boardsService) {
@@ -21,6 +24,8 @@ public class BoardController {
 
   @GetMapping("")
   public ModelAndView index() throws Exception {
+    log.info("index called");
+
     ModelAndView mv = new ModelAndView("boards/index");
 
     List<BoardDto> list = boardsService.listBoards();
