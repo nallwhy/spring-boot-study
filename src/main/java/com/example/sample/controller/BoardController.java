@@ -24,7 +24,7 @@ public class BoardController {
 
   @GetMapping("")
   public ModelAndView index() throws Exception {
-    log.info("index called");
+    log.debug("index called");
 
     ModelAndView mv = new ModelAndView("boards/index");
 

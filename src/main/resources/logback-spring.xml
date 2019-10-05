@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
+
     <!-- Appenders -->
     <appender name="console-debug" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -13,11 +14,12 @@
         </encoder>
     </appender>
 
-    <!-- Loggers -->
-    <logger name="board" level="DEBUG" apeender-ref="console-debug"/>
-
     <!-- Root Logger -->
     <root level="INFO">
-        <appender-ref ref="console-debug"/>
+        <appender-ref ref="console-info"/>
     </root>
+
+    <!-- Loggers -->
+    <logger name="com.example" level="DEBUG" apeender-ref="console-debug"/>
+
 </configuration>
